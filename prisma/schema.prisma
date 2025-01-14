@@ -18,6 +18,8 @@ model User {
   email    String @unique
   username String @db.VarChar(30) @unique
   password String
+  passwordResetToken String?
+  passwordResetTokenExpiry DateTime?
 
   posts     Post[] // column used by prisma to create relationships (column wont be added to the actual DB)
 }

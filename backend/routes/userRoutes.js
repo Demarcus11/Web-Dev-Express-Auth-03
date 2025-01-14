@@ -10,5 +10,7 @@ const userRouter = express.Router();
 userRouter.post("/", userController.asyncRegisterUser);
 userRouter.post("/login", userController.asyncLoginUser);
 userRouter.get("/me", protect, userController.asyncGetUserData);
+userRouter.post("/forgot-password", userController.asyncForgotPassword);
+userRouter.post("/forgot-password/:token", userController.asyncResetPassword);
 
 export default userRouter;
